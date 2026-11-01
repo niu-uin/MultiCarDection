@@ -1,5 +1,5 @@
 """
-yolov8l_soft.py — 基于 YOLOv8l + SORT 的车辆检测与计数方案
+yolov8l_sort.py — 基于 YOLOv8l + SORT 的车辆检测与计数方案
 
 【与 yolov8l_ByteTrack.py 的核心区别】
   跟踪器方案: 使用 SORT（Sort类，由 kalman 模块提供）
@@ -160,7 +160,7 @@ while True:
     # 将检测结果保存在视频
     if writer is None:
         fourcc = cv2.VideoWriter_fourcc(*"mp4v")
-        writer = cv2.VideoWriter("./output/output_soft.mp4", fourcc, 30, (frame.shape[1], frame.shape[0]), True)
+        writer = cv2.VideoWriter("./output/output_sort.mp4", fourcc, 30, (frame.shape[1], frame.shape[0]), True)
     writer.write(frame)
     # 无图形界面环境，不调用imshow，结果已保存到output.mp4
     # cv2.imshow("", frame)
